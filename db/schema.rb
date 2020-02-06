@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_084858) do
+ActiveRecord::Schema.define(version: 2020_02_06_111318) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "domain", null: false
+    t.string "banner_url", null: false
+    t.string "logo_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_companies_on_name"
+  end
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer "resource_owner_id", null: false
