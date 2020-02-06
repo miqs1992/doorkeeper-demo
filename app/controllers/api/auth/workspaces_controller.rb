@@ -2,12 +2,10 @@
 
 module Api
   module Auth
-    class WorkspacesController < ApplicationController
+    class WorkspacesController < ApiController
       def show
-        company = Company.find_by(domain: params[:id])
-        return render json: company.to_json if company
-
-        render json: { message: 'not found' }, status: :not_found
+        company = Company.find_by!(domain: params[:id])
+        render json: company.to_json
       end
     end
   end
