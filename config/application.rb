@@ -18,6 +18,8 @@ module ChromePluginBackend
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.action_controller.forgery_protection_origin_check = false
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
