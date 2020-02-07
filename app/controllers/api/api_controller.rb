@@ -2,6 +2,8 @@
 
 module Api
   class ApiController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
     private
