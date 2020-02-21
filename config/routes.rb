@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       resources :workspaces, only: :show
     end
     resources :items, only: %i[create show]
+    resources :me, only: :index
   end
 end

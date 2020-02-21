@@ -15,4 +15,13 @@ class User < ApplicationRecord
                             dependent: :delete_all
 
   has_many :items, dependent: :destroy
+
+  def to_json(*_args)
+    {
+      email: email,
+      id: id,
+      userImageSrc: image_url,
+      userProfileUrl: link
+    }
+  end
 end
