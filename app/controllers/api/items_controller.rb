@@ -3,6 +3,7 @@
 module Api
   class ItemsController < ApiController
     before_action :doorkeeper_authorize!
+    doorkeeper_for :create, :show, scopes: [:public]
 
     def create
       item = current_resource_owner.items.new(item_data)
