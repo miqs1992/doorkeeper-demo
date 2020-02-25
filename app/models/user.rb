@@ -21,7 +21,7 @@ class User < ApplicationRecord
       email: email,
       id: id,
       userImageSrc: image_url,
-      userProfileUrl: link
+      userProfileUrl: Rails.application.routes.url_helpers.users_url
     }
   end
 end

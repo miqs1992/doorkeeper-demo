@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :items, only: %i[create show]
     resources :me, only: :index
   end
+
+  resources :items, only: :show
+  resources :users, only: :index
 end
