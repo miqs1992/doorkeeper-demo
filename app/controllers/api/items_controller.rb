@@ -13,8 +13,8 @@ module Api
       end
     end
 
-    def show
-      item = current_resource_owner.items.find_by!(url: params[:id])
+    def find
+      item = current_resource_owner.items.find_by!(url: params[:url])
       render json: item.to_json
     end
 

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     namespace :auth do
       resources :workspaces, only: :show
     end
-    resources :items, only: %i[create show]
+    resources :items, only: :create do
+      collection do
+        get :find
+      end
+    end
     resources :me, only: :index
   end
 
